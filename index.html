@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Poster Creator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="controls card">
+        <h1>AI Poster Creator</h1>
+        <p class="subtitle">Generate an image, style your headline, and export a poster in one click.</p>
+
+        <label>
+          OpenAI API Key
+          <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
+        </label>
+
+        <label>
+          Poster prompt
+          <textarea id="prompt" rows="4" placeholder="A futuristic music festival poster with neon lights and cyberpunk skyline"></textarea>
+        </label>
+
+        <div class="row two-col">
+          <label>
+            Image model
+            <select id="model">
+              <option value="gpt-image-1">gpt-image-1</option>
+            </select>
+          </label>
+          <label>
+            Size
+            <select id="size">
+              <option value="1024x1024">1024 × 1024</option>
+              <option value="1024x1536">1024 × 1536</option>
+              <option value="1536x1024">1536 × 1024</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Poster text</legend>
+          <label>
+            Headline
+            <input id="headline" type="text" placeholder="NIGHT WAVE 2026" />
+          </label>
+          <div class="row two-col">
+            <label>
+              Subheading
+              <input id="subheading" type="text" placeholder="Live at Skyline Arena" />
+            </label>
+            <label>
+              Footer
+              <input id="footer" type="text" placeholder="Fri 8PM • Tickets On Sale Now" />
+            </label>
+          </div>
+          <div class="row three-col">
+            <label>
+              Text color
+              <input id="textColor" type="color" value="#ffffff" />
+            </label>
+            <label>
+              Accent color
+              <input id="accentColor" type="color" value="#00ffc8" />
+            </label>
+            <label>
+              Font
+              <select id="fontFamily">
+                <option value="Impact, sans-serif">Impact</option>
+                <option value="'Arial Black', Arial, sans-serif">Arial Black</option>
+                <option value="'Trebuchet MS', sans-serif">Trebuchet</option>
+                <option value="Georgia, serif">Georgia</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button id="generateBtn">Generate with AI</button>
+          <button id="mockBtn" class="secondary">Use Demo Background</button>
+          <button id="downloadBtn" class="ghost">Download Poster</button>
+        </div>
+
+        <p id="status" class="status">Ready.</p>
+      </section>
+
+      <section class="preview card">
+        <h2>Poster Preview</h2>
+        <canvas id="posterCanvas" width="1024" height="1536" aria-label="Poster canvas"></canvas>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
