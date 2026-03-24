@@ -1,0 +1,153 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --card: #151d35;
+  --muted: #98a7d2;
+  --line: #32406a;
+  --accent: #00ffc8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1b2550, #0b1020 52%);
+  color: #ecf1ff;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 420px minmax(0, 1fr);
+}
+
+.card {
+  background: color-mix(in oklab, var(--card), black 8%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.subtitle,
+.status {
+  color: var(--muted);
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+label,
+fieldset {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+input,
+textarea,
+select,
+button {
+  width: 100%;
+  margin-top: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0f1731;
+  color: #f2f5ff;
+  padding: 0.62rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+legend {
+  padding: 0 0.35rem;
+  color: #d6e0ff;
+}
+
+.row {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.actions {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(130deg, #05a6ff, #00ffc8);
+  color: #071225;
+  font-weight: 700;
+}
+
+button.secondary {
+  background: linear-gradient(130deg, #7f7fff, #c184ff);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid #6f87d7;
+  color: #cfe0ff;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+}
+
+canvas {
+  width: min(100%, 690px);
+  aspect-ratio: 2 / 3;
+  border-radius: 14px;
+  border: 1px solid #475d98;
+  align-self: center;
+  background: #0f1731;
+}
+
+@media (max-width: 1080px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .actions,
+  .two-col,
+  .three-col {
+    grid-template-columns: 1fr;
+  }
+}
